@@ -1,7 +1,8 @@
 import {Requester} from "@/api/requester";
 import {Instance} from "@/api/types/instance";
 import {Fragment} from "react";
-import PageTitle from "@/components/page/page-title";
+import Title from "@/components/page/title";
+import CodeBlock from "@/components/CodeBlock";
 
 const requester: Requester = new Requester();
 
@@ -11,13 +12,13 @@ export default async function Home() {
 
     return (
         <Fragment>
-            <PageTitle title={version}>Welcome to {instance.instanceName}!</PageTitle>
+            <Title title={version}>Welcome to {instance.instanceName}!</Title>
             <p>{instance.instanceDescription}</p>
 
             <br/>
-            <pre className="whitespace-pre-wrap bg-background rounded p-5">
+            <CodeBlock>
                 {JSON.stringify(instance, null, 4)}
-            </pre>
+            </CodeBlock>
         </Fragment>
     )
 }

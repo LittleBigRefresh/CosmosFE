@@ -2,7 +2,7 @@ import {ReactNode} from "react";
 
 export type Size = "small" | "medium" | "large";
 
-export default function PageTitle({size = "large", title, children}: {size?: Size, title?: string, children: ReactNode}) {
+export default function Title({size = "large", title, children}: {size?: Size, title?: string, children: ReactNode}) {
     switch(size) {
         case "small":
             return (<h3 className="font-bold text-xl" title={title}>{children}</h3>);
