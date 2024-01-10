@@ -10,7 +10,9 @@ function NavBar() {
     return (
         <nav className="flex gap-x-1">
             <NavBarItem href="/" title="Home"></NavBarItem>
-            <NavBarItem href="/asdf" title="Testing route"></NavBarItem>
+            <NavBarItem href="/levels" title="Levels"></NavBarItem>
+            <NavBarItem href="/photos" title="Photos"></NavBarItem>
+            <NavBarItem href="/activity" title="Activity"></NavBarItem>
         </nav>
     );
 }

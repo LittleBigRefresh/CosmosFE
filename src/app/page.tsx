@@ -1,8 +1,8 @@
 import {Requester} from "@/api/requester";
 import {Instance} from "@/api/types/instance";
 import {Fragment} from "react";
-import Title from "@/components/page/title";
-import CodeBlock from "@/components/CodeBlock";
+import Title from "@/components/page/Title";
+import CodeBlock from "@/components/elements/CodeBlock";
 
 const requester: Requester = new Requester();
 
@@ -15,7 +15,7 @@ export default async function Home() {
             <Title title={version}>Welcome to {instance.instanceName}!</Title>
             <p>{instance.instanceDescription}</p>
 
-            <br/>
+            <Title size="medium">/api/v3/instance</Title>
             <CodeBlock>
                 {JSON.stringify(instance, null, 4)}
             </CodeBlock>

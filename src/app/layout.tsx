@@ -2,7 +2,7 @@ import type {Metadata} from 'next'
 import {Rubik} from 'next/font/google'
 import './globals.css'
 import {ReactNode} from "react";
-import Header from "@/components/page/header";
+import Header from "@/components/page/Header";
 
 const font = Rubik({subsets: ['latin']})
 
