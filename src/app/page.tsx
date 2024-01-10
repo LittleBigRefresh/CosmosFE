@@ -1,12 +1,23 @@
 import {Requester} from "@/api/requester";
+import {Instance} from "@/api/types/instance";
+import {Fragment} from "react";
+import PageTitle from "@/components/page/page-title";
 
 const requester: Requester = new Requester();
 
 export default async function Home() {
-    const user = await requester.makeJsonRequest<any>("GET", "/users/name/jvyden420");
+    const instance: Instance = await requester.makeJsonRequest<Instance>("GET", "/instance");
+    const version: string = `Running on ${instance.softwareName} v${instance.softwareVersion} (${instance.softwareType})`;
+
     return (
-        <pre className="whitespace-pre-line">
-            {JSON.stringify(user)}
-        </pre>
+        <Fragment>
+            <PageTitle title={version}>Welcome to {instance.instanceName}!</PageTitle>
+            <p>{instance.instanceDescription}</p>
+
+            <br/>
+            <pre className="whitespace-pre-wrap bg-background rounded p-5">
+                {JSON.stringify(instance, null, 4)}
+            </pre>
+        </Fragment>
     )
 }
