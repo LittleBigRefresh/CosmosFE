@@ -1,4 +1,3 @@
-// import {BodyInit, fetch} from "undici-types";
 import {RefreshApiResponse} from "@/api/refresh-api-response";
 
 export class Requester {
@@ -14,6 +13,7 @@ export class Requester {
                 "Content-Type": contentType,
             },
             redirect: "follow",
+            cache: "no-cache",
             body,
         });
 

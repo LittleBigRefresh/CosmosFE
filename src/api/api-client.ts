@@ -13,3 +13,6 @@ export class ApiClient {
         return await this.requester.makeJsonRequest("GET", "/statistics");
     }
 }
+
+const api = new ApiClient(new Requester());
+export default api;

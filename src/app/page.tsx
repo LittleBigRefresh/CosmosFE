@@ -1,20 +1,18 @@
-import {Requester} from "@/api/requester";
 import {Instance} from "@/api/types/instance";
 import {Fragment} from "react";
 import Title from "@/components/page/Title";
 import CodeBlock from "@/components/elements/CodeBlock";
-import {ApiClient} from "@/api/api-client";
-
-const api: ApiClient = new ApiClient(new Requester());
+import api from "@/api/api-client";
 
 export default async function Home() {
     const instance: Instance = await api.getInstanceInfo();
     const version: string = `Running on ${instance.softwareName} v${instance.softwareVersion} (${instance.softwareType})`;
 
+    console.log("render");
     return (
         <Fragment>
-            <Title title={version}>Welcome to {instance.instanceName}!</Title>
-            <p>{instance.instanceDescription}</p>
+            <Title title={version}>Welcome to {instance?.instanceName}!</Title>
+            <p>{instance?.instanceDescription}</p>
 
             <Title size="medium">/api/v3/instance</Title>
             <CodeBlock>
