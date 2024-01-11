@@ -3,11 +3,12 @@ import {Instance} from "@/api/types/instance";
 import {Fragment} from "react";
 import Title from "@/components/page/Title";
 import CodeBlock from "@/components/elements/CodeBlock";
+import {ApiClient} from "@/api/api-client";
 
-const requester: Requester = new Requester();
+const api: ApiClient = new ApiClient(new Requester());
 
 export default async function Home() {
-    const instance: Instance = await requester.makeJsonRequest<Instance>("GET", "/instance");
+    const instance: Instance = await api.getInstanceInfo();
     const version: string = `Running on ${instance.softwareName} v${instance.softwareVersion} (${instance.softwareType})`;
 
     return (
