@@ -3,7 +3,7 @@ import type { Config } from 'tailwindcss'
 const defaultColors = {
   "background": "#0F0814",
   "header-background": "#261731",
-  "form-background": "#2A1936",
+  "container-background": "#2A1936",
   "backdrop": "#1B0F23",
 
   "divider": "#13071A",

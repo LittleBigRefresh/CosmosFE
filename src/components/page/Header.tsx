@@ -1,26 +1,37 @@
 import Link from "next/link";
+import Image from "next/image";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCamera, faCertificate, faCoffee, faFireAlt, IconDefinition} from "@fortawesome/free-solid-svg-icons";
 
-function NavBarItem({href, title}: {href: string, title: string}) {
+function NavBarItem({href, title, icon}: {href: string, title: string, icon: IconDefinition}) {
     return (
-        <Link href={href}>{title}</Link>
+        <Link href={href} className="flex items-center gap-x-2 text-xl">
+            <FontAwesomeIcon icon={icon} className="w-5 h-5"></FontAwesomeIcon>
+            <span>{title}</span>
+        </Link>
     );
 }
 
 function NavBar() {
     return (
-        <nav className="flex gap-x-1">
-            <NavBarItem href="/" title="Home"></NavBarItem>
-            <NavBarItem href="/levels" title="Levels"></NavBarItem>
-            <NavBarItem href="/photos" title="Photos"></NavBarItem>
-            <NavBarItem href="/activity" title="Activity"></NavBarItem>
+        <nav className="flex gap-x-5">
+            <NavBarItem href="/levels" title="Levels" icon={faCertificate}></NavBarItem>
+            <NavBarItem href="/photos" title="Photos" icon={faCamera}></NavBarItem>
+            <NavBarItem href="/activity" title="Activity" icon={faFireAlt}></NavBarItem>
         </nav>
     );
 }
 
 export default function Header() {
     return (
-        <div className="flex bg-header-background">
-            <h1 className="font-bold mr-1">CosmosFE Prototype</h1>
+        <div className="flex items-center bg-header-background gap-x-2.5 px-5 py-1 leading-none">
+            <Link href="/" title="Home">
+                <Image src="/assets/logo.svg" alt="Refresh Logo" width="48" height="48"></Image>
+            </Link>
+
+            {/* vertical divider */}
+            <div className="mx-1.5 w-[3px] rounded-full h-11 bg-divider"></div>
+
             <NavBar></NavBar>
         </div>
     );
