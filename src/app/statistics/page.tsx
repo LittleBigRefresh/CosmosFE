@@ -28,19 +28,19 @@ export default function Statistics() {
             <p>Server version: {instance.softwareVersion}</p>
 
             <Title size="medium">Things</Title>
-            <p>Registered users: {stats.totalUsers} ({stats.activeUsers} active)</p>
-            <p>Submitted levels: {stats.totalLevels}</p>
-            <p>Uploaded photos: {stats.totalPhotos}</p>
-            <p>Events occurred: {stats.totalEvents}</p>
+            <p>Registered users: {stats.totalUsers.toLocaleString()} ({stats.activeUsers.toLocaleString()} active)</p>
+            <p>Submitted levels: {stats.totalLevels.toLocaleString()}</p>
+            <p>Uploaded photos: {stats.totalPhotos.toLocaleString()}</p>
+            <p>Events occurred: {stats.totalEvents.toLocaleString()}</p>
 
-            <Title size="medium">Requests ({requestStats.totalRequests} in total)</Title>
-            <p>API requests: {requestStats.apiRequests}</p>
-            <p>Game API requests: {requestStats.gameRequests}</p>
-            <p>Legacy API requests: {requestStats.legacyApiRequests}</p>
+            <Title size="medium">Requests ({requestStats.totalRequests.toLocaleString()} in total)</Title>
+            <p>API requests: {requestStats.apiRequests.toLocaleString()}</p>
+            <p>Game API requests: {requestStats.gameRequests.toLocaleString()}</p>
+            <p>Legacy API requests: {requestStats.legacyApiRequests.toLocaleString()}</p>
 
             <Title size="medium">Activity</Title>
-            <p>People online now: {stats?.currentIngamePlayersCount}</p>
-            <p>Active rooms: {stats?.currentRoomCount}</p>
+            <p>People online now: {stats?.currentIngamePlayersCount.toLocaleString()}</p>
+            <p>Active rooms: {stats?.currentRoomCount.toLocaleString()}</p>
         </Fragment>
     )
 }
