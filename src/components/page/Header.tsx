@@ -18,6 +18,7 @@ function NavBar() {
             <NavBarItem href="/levels" title="Levels" icon={faCertificate}></NavBarItem>
             <NavBarItem href="/photos" title="Photos" icon={faCamera}></NavBarItem>
             <NavBarItem href="/activity" title="Activity" icon={faFireAlt}></NavBarItem>
+            <NavBarItem href="/statistics" title="Statistics (temporary)" icon={faCoffee}></NavBarItem>
         </nav>
     );
 }
