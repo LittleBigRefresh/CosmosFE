@@ -1,16 +1,32 @@
+"use client";
+
 import {Requester} from "@/api/requester";
 import {Instance} from "@/api/types/instance";
 import {Statistics} from "@/api/types/statistics";
+import {useEffect, useState} from "react";
 
 export class ApiClient {
     constructor(private requester: Requester) {}
 
-    public async getInstanceInfo(): Promise<Instance> {
-        return await this.requester.makeJsonRequest("GET", "/instance");
+    private makeRequest<T>(method: string, endpoint: string, body: any | undefined = undefined): T | null
+    {
+        const [data, setData] = useState<T | null>(null);
+
+        useEffect(() => {
+            this.requester.makeJsonRequest<T>(method, endpoint, body).then(data => {
+                setData(data);
+            });
+        }, []);
+
+        return data;
     }
 
-    public async getStatistics(): Promise<Statistics> {
-        return await this.requester.makeJsonRequest("GET", "/statistics");
+    public getInstanceInfo(): Instance | null {
+        return this.makeRequest("GET", "/instance");
+    }
+
+    public getStatistics(): Statistics | null {
+        return this.makeRequest("GET", "/statistics");
     }
 }
 
