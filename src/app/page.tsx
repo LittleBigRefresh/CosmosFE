@@ -13,8 +13,8 @@ export default function Home() {
     console.log("render");
     return (
         <Fragment>
-            <Title title={version}>Welcome to {instance?.instanceName}!</Title>
-            <p>{instance?.instanceDescription}</p>
+            <Title title={version}>Welcome to {instance?.instanceName ?? "Refresh"}!</Title>
+            <p>{instance?.instanceDescription ?? "Loading..."}</p>
 
             <Title size="medium">/api/v3/instance</Title>
             <CodeBlock>

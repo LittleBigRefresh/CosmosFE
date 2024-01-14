@@ -13,7 +13,7 @@ export class Requester {
                 "Content-Type": contentType,
             },
             redirect: "follow",
-            cache: "no-cache",
+            cache: "default",
             body,
         });
 
