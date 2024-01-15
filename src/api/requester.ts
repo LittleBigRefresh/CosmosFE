@@ -6,8 +6,7 @@ export class Requester {
     private async makeRequest(method: string, endpoint: string, contentType: string, body: BodyInit | undefined = undefined): Promise<Response> {
         if(endpoint[0] !== "/") throw new Error("Endpoint must begin with slash");
 
-        // @ts-ignore (some weirdness with headers or something)
-        const response: Response = await fetch(this.apiBaseUrl + endpoint, {
+        return await fetch(this.apiBaseUrl + endpoint, {
             method,
             headers: {
                 "Content-Type": contentType,
@@ -16,8 +15,6 @@ export class Requester {
             cache: "default",
             body,
         });
-
-        return response;
     }
 
     public async makeJsonRequest<T>(method: string, endpoint: string, body: any | undefined = undefined): Promise<T> {

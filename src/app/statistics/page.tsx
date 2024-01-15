@@ -39,8 +39,8 @@ export default function Statistics() {
             <p>Legacy API requests: {requestStats.legacyApiRequests.toLocaleString()}</p>
 
             <Title size="medium">Activity</Title>
-            <p>People online now: {stats?.currentIngamePlayersCount.toLocaleString()}</p>
-            <p>Active rooms: {stats?.currentRoomCount.toLocaleString()}</p>
+            <p>People online now: {stats.currentIngamePlayersCount.toLocaleString()}</p>
+            <p>Active rooms: {stats.currentRoomCount.toLocaleString()}</p>
         </Fragment>
     )
 }
