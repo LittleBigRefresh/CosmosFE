@@ -4,6 +4,7 @@ import {Requester} from "@/api/requester";
 import {Instance} from "@/api/types/instance";
 import {Statistics} from "@/api/types/statistics";
 import {useEffect, useState} from "react";
+import {LevelCategory} from "@/api/types/levels/level-category";
 
 export class ApiClient {
     constructor(private requester: Requester) {}
@@ -27,6 +28,10 @@ export class ApiClient {
 
     public getStatistics(): Statistics | null {
         return this.makeRequest("GET", "/statistics");
+    }
+
+    public getLevelCategories(): LevelCategory[] | null {
+        return this.makeRequest("GET", "/levels");
     }
 }
 

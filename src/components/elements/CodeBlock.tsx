@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import Container from "@/components/elements/Container";
+import Container from "@/components/elements/layout/Container";
 
 export default function CodeBlock({children}: {children: ReactNode}) {
     return (
