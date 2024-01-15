@@ -2,6 +2,13 @@
 A WIP rewrite of refresh-web in next.js
 
 ## Contributing
+
+Install the dependencies:
+
+```bash
+npm i
+```
+
 Run the development server:
 
 ```bash
