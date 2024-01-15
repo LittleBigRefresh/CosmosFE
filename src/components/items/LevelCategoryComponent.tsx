@@ -3,6 +3,19 @@ import {LevelCategory} from "@/api/types/levels/level-category";
 import Title from "@/components/page/Title";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faLink} from "@fortawesome/free-solid-svg-icons";
+import {Fragment} from "react";
+import Divider from "@/components/elements/layout/Divider";
+import {Level} from "@/api/types/levels/level";
+import LevelPreview from "@/components/items/LevelPreview";
+
+function LevelCategoryPreview({level}: {level: Level}) {
+    return (
+        <Fragment>
+            <Divider></Divider>
+            <LevelPreview level={level}></LevelPreview>
+        </Fragment>
+    );
+}
 
 export default function LevelCategoryComponent({category}: {category: LevelCategory}) {
     return (
@@ -16,6 +29,7 @@ export default function LevelCategoryComponent({category}: {category: LevelCateg
                 </Title>
             </a>
             <p>{category.description}</p>
+            {category.previewLevel ? <LevelCategoryPreview level={category.previewLevel}></LevelCategoryPreview> : <></>}
         </Container>
     )
 }

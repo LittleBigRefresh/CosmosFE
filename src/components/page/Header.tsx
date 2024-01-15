@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCamera, faCertificate, faCoffee, faFireAlt, IconDefinition} from "@fortawesome/free-solid-svg-icons";
+import {faCamera, faCertificate, faCoffee, faFire, IconDefinition} from "@fortawesome/free-solid-svg-icons";
 
 function NavBarItem({href, title, icon}: {href: string, title: string, icon: IconDefinition}) {
     return (
@@ -17,7 +17,7 @@ function NavBar() {
         <nav className="flex gap-x-5">
             <NavBarItem href="/levels" title="Levels" icon={faCertificate}></NavBarItem>
             <NavBarItem href="/photos" title="Photos" icon={faCamera}></NavBarItem>
-            <NavBarItem href="/activity" title="Activity" icon={faFireAlt}></NavBarItem>
+            <NavBarItem href="/activity" title="Activity" icon={faFire}></NavBarItem>
             <NavBarItem href="/statistics" title="Statistics (temporary)" icon={faCoffee}></NavBarItem>
         </nav>
     );

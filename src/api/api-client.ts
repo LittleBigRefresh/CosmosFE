@@ -31,7 +31,7 @@ export class ApiClient {
     }
 
     public getLevelCategories(): LevelCategory[] | null {
-        return this.makeRequest("GET", "/levels");
+        return this.makeRequest("GET", "/levels?includePreviews=true");
     }
 }
 
