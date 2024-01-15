@@ -4,13 +4,15 @@ import {Fragment} from "react";
 import Title from "@/components/page/Title";
 import api from "@/api/api-client";
 import {LevelCategory} from "@/api/types/levels/level-category";
-import LevelCategoryComponent from "@/components/elements/LevelCategoryComponent";
+import LevelCategoryComponent from "@/components/items/LevelCategoryComponent";
 import ResponsiveGrid from "@/components/elements/layout/ResponsiveGrid";
 
 function CategoryList({categories}: {categories: LevelCategory[] | null}) {
     if(!categories) return (<p>Loading...</p>);
 
-    return categories.map(c => <LevelCategoryComponent category={c} key={c.apiRoute}></LevelCategoryComponent>);
+    return categories
+        .filter(c => !c.hidden && !c.requiresUser)
+        .map(c => <LevelCategoryComponent category={c} key={c.apiRoute}></LevelCategoryComponent>);
 }
 
 export default function LevelCategories() {

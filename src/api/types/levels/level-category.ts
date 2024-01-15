@@ -8,4 +8,5 @@ export interface LevelCategory {
     iconHash: string;
     fontAwesomeIcon: string;
     previewLevel: Level | undefined;
+    hidden: boolean;
 }

@@ -10,7 +10,7 @@ export default function LevelCategoryComponent({category}: {category: LevelCateg
             <a href={"/levels/" + category.apiRoute}>
                 <Title size={"small"}>
                     {/*@ts-ignore*/}
-                    <FontAwesomeIcon icon={category.fontAwesomeIcon}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={category.fontAwesomeIcon} className="mr-1"></FontAwesomeIcon>
                     <span>{category.name}</span>
                     <FontAwesomeIcon icon={faLink} className="text-gentle text-sm ml-1"></FontAwesomeIcon>
                 </Title>
