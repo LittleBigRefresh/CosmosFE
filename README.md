@@ -1,5 +1,10 @@
 # Cosmos FrontEnd
-A WIP rewrite of refresh-web in next.js
+
+This is an example custom frontend for Refresh APIv3, written in next.js.
+
+Previously, this was intended to be a replacement for `refresh-web`, the current frontend, but this ended up not being a good move for us.
+
+It probably won't be maintained, not that it supports much.
 
 ## Contributing
 Run the development server:
